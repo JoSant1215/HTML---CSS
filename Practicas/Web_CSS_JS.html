@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pagina, CSS!</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        
+        .header 
+        {
+            background-color: #eca3f5;
+            padding: 10px;
+            text-align: center;
+            font-size: 35px;
+            
+        }
+        img.logo
+        {
+            border-radius: 50%;
+            
+        }
+        
+        .row 
+        {
+            display: -webkit-flex;
+           
+        }
+
+        
+        .column 
+        {
+            padding: 10px;
+            height: 300px; 
+        }
+
+        
+        .column.side 
+        {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: center;
+            background-color:#fdbaf8;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+        }
+
+        
+        .column.middle 
+        {
+            -webkit-flex: 2;
+            -ms-flex: 2;
+            flex: 2;
+            background-color:#ffe9d6;
+            
+        }
+        .fo 
+        {
+            
+            background-color: #f6e6e4;
+            padding: 20px;
+            text-align: center;
+      
+            
+        }
+        .pie
+        {
+            background-color: #ffaaa7;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        div.container 
+        {
+            text-align: center;
+            padding: 10px 20px;
+
+        }
+
+        
+        @media (max-width: 600px) 
+        {
+            .row {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+    <body>
+
+
+        <div class="header">
+            <img  class="logo" src="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59a669fc5bafe88febb3d6cc/gatito-cesped_0.jpg" align = "justify"; alt="LOGO" width="200" height="200">
+            <h2>SITIO WEB DE GATOS</h2>
+            
+        </div>
+
+        <div class="container"></div>
+
+        <div class="row">
+            <div class="column side">
+                <img   src="https://t2.ea.ltmcdn.com/es/images/9/5/7/img_10_cosas_que_le_gustan_a_los_gatos_22759_paso_2_600.jpg" align = "justify" width="220px" height="200px">
+                <div class="container">
+                    <p style="color: #c67ace; font-weight: bold;">Cute!</p>
+                </div>
+            </div>
+        <div class="column middle" >
+                <p style="text-align: justify center;  color: #511281; font-weight: bold;"> Los Gatos</p>
+
+                <p style="text-align: justify center; color: #511281;">
+                            
+                    Los gatos son todos miembros de una misma especie, Felis catus, que mantiene una relación con los humanos 
+                    desde hace mucho tiempo.Los antiguos egipcios habrían sido los primeros en domesticar   
+                    gatos, hace ya 4.000 años.
+                </p>
+
+                <p style="text-align: center; color: #511281;">
+                        
+                    Los gatos hacen las siguientes actividades:
+                </p>
+
+                <p style="text-align: center; color: #511281;">
+                        
+                    Maullan, Juegan, Cazan, Duermen y Le gustan arañar
+                </p>
+                    
+           
+        </div>
+            <div class="column side">
+                <img id="center" src="https://cf.ltkcdn.net/gatos/images/std/236641-800x515r1-etapas-desarrollo-gatitos.jpg" width="200px" height="200px"/>
+                <div class="container">
+                    <p style="color: #c67ace; font-weight: bold;">Cute!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fo">
+            <h4>Imagines and Gif</h4>
+            <img id="lateral" src="https://cf.ltkcdn.net/gatos/images/std/236641-800x515r1-etapas-desarrollo-gatitos.jpg" align = "left" width="200px" height="130px"/>
+            <img src="https://www.feelcats.com/blog/wp-content/uploads/2019/02/razas-gatos-de.jpg" align = "center"width="200px" height="130px">
+            <img src="https://m.gifmania.com/Gif-Animados-Animales/Imagenes-Gatos/Gatos-De-Angora/Angora-Ojos-Dos-Colores-70284.gif" align = "right" width="210px" height="130px">
+            
+        </div>
+        <div class="container"></div>
+
+        <footer class="pie">
+            
+        <b> Los gatos son maravillosos. Adopta un gatito para hacerte compañia. :) </br>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .senor
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-align: center;
+            padding: 10px;
+        }
+        .header, .articulo, .izquierda, .derecha, .footer
+        {
+            flex-grow: 1;
+            flex-basis: 100%;
+            padding: 10px;
+        }
+
+        @media all and  
+        .header{background: brown;}
+        .izquierda{background: rebeccapurple;}
+        .derecha{background: cadetblue;}
+        .footer{background: cornflowerblue;}
+    </style>
+<body>
+    <div class="senor">
+        <header class="header">
+            NIce
+        </header>
+        <article class="articulo">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit deleniti doloremque aut voluptas quasi tenetur, voluptatum dicta officiis cumque officia culpa illo quia sunt possimus neque aliquid hic magnam debitis.</p>
+        </article>
+        <aside class="aside izquierda">Izquierda</aside>
+        <aside class="aside izquierda">Derecha</aside>
+        <footer class="footer">Nice :)</footer>
+    </div>
+</body>
+</html>

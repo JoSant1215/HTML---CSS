@@ -9,6 +9,7 @@
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <link rel="stylesheet" href="st.css">
+    <!-- <link rel="stylesheet" href="sub.js">-->
 </head>
 <body>
     
@@ -44,7 +45,7 @@
                 <div class="title">Formulario</div>
             </div>
             
-            <form id = "form"class="col s12">
+            <form id = "form" class="col s12" onsubmit="return Valida(this)">
 
                 <div class="row card-panel">
 
@@ -74,18 +75,18 @@
 
                     <div class="input-field col s6">
 
-                        <input type="email" name="email" id="email" class="validation" >
+                        <input type="email" name="email" id="email" class="validation" required>
                         <label for="email">Email: </label>
                     </div>
                     <div class="input-field col s6">
 
-                        <input type="password" name="password" id="password" class="validation" >
+                        <input type="password" name="password" id="password" class="validation" required>
                         <label for="password">Password: </label>
                     </div>
 
                     <div class="input-field col s6">
 
-                        <input type="tel" name="telefono" id="telefono"class="validation">
+                        <input type="tel" name="telefono" id="telefono"class="validation" required>
                         <label for="telefono">Telefono: </label>
                     </div>
 
@@ -98,28 +99,25 @@
                     <div class="input-field col s6">
                         <label>
                           Sexo: &nbsp;
-                          <input name="masculino" type="checkbox" />
-                          <span>Masculino&nbsp;</span>
-                          <input name="femenino" type="checkbox" />
-                          <span>Femenino</span>
+
+                          <input name="masculino" type="checkbox"  />
+                          <span>Masculino</span>
                         </label>
                         
 
                     </div>
 
-                   <!-- <div class="input-field col s6">
+                   <div class="input-field col s6">
                         <label>
                           <input type="checkbox"  />
-                          <span>Masculino</span>
-                          <input type="checkbox" />
                           <span>Femenino</span>
                         </label>
-                    </div>--> 
+                    </div>
                     <div class="input-field col s6">
                         <br>
                     </div>  
                     </div >
-                        <button class="btn waves-effect waves-light white" type="submit" name="action"><a style="color: white;" href="Login.html">Enviar</a>
+                        <button class="btn waves-effect waves-light white" type="submit" name="action" ><a style="color: white;" href="Login.html">Enviar</a>
                             <!--class="btn waves-effect waves-light blue"-->
                         </button>
                 </div>
@@ -132,13 +130,69 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--<script>
-        const $form = document.querySelector('#form')
-        $form.addEventListener('submit', handleSubmit)
-    
-        function handleSubmit(event)
-        {
-            event.preventDefaul()
+        valor = document.getElementById("cedula").value;
+        
+        if( !(/^\d{3}-\d{7}-\d{1}$/.test(valor)) ) {
+        return false;
         }
+
+        if(valor.charAt(11) != letras[(valor.substring(0,11))%23]) {
+        return false;
+        }
+        function nif(cedula) {
+            var numero
+            var letr
+            var letra
+            var expresion_regular_dni
+            
+            expresion_regular_dni = /{3}-\d{7}-\d{1}$/;
+            
+            if(expresion_regular_dni.test (cedula) == true){
+                numero = dni.substr(0,dni.length-1);
+                
+                numero = numero % 23;
+                letra='TRWAGMYFPDXBNJZSQVHLCKET';
+                letra=letra.substring(numero,numero+1);
+                if (letra!=letr.toUpperCase()) {
+                alert('Dni erroneo, la letra del NIF no se corresponde');
+                }else{
+                alert('Dni correcto');
+                }
+            }else{
+                alert('Dni erroneo, formato no válido');
+            }
+        }
+        function Valida(formulario) {
+                /* Validación de campos NO VACÍOS */
+                if ((formulario.nombre.value.length == 0) || (formulario.apellido.value.length ==0) || (formulario.direccion.value.length ==0) || (formulario.cedula.value.length ==0) || (formulario.email.value.length ==0) || (formulario.telefono.value.length ==0) || (formulario.fecha.value.length ==0)  || (formulario.password.value.length ==0)) {
+                    alert('Falta información');
+                    return false;
+                }
+                if (isNaN(parseInt(formulario.campo2.value))) {
+                    alert('El campo2 debe ser un número');
+                    return false;
+                }
+                /* validación del CÓDIGO POSTAL*/
+                var ercp=/(^([0-9]{5,5})|^)$/;
+                if (!(ercp.test(formulario.cpostal.value))) {
+                    alert('Contenido del código postal no es un código postal válido');
+                    return false; }
+                /* validación del DNI */
+                var erdni=/{3}-\d{7}-\d{1}$/;
+                if (!(erdni.test(formulario.cedula.value))) {
+                    alert('Contenido de la cedula no es un DNI válido.');
+                    return false;  }
+                /* validación del e-mail */
+                var ercorreo=/^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;       
+                if (!(ercorreo.test(formulario.email.value))) {
+                    alert('Contenido del email no es un correo electrónico válido.');
+                    return false; }
+                /* si no hemos detectado fallo devolvemos TRUE */
+                return true;
+            }
+    
     </script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
+
 </body>
 </html>

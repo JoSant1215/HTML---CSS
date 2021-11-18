@@ -106,3 +106,7 @@ floating_btn.addEventListener('click', () => {
 close_btn.addEventListener('click', () => {
 	social_panel_container.classList.remove('visible')
 });
+(function() {
+	alert('readyS');
+	document.querySelector('#fecha').max = new Date(new Date().getFullYear()-18,11,31).toISOString().slice(0,10)
+}	)();
